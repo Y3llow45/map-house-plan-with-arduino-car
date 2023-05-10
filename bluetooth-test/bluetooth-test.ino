@@ -26,11 +26,35 @@ void loop(){
     delay(10);
     HM10.write(Serial.read());
   }
+  if ( inData == "W") {
+    forward = true;
+    right = false;
+    backward = false;
+    left = false;
+  }
+  if ( inData == "D") {
+    forward = false;
+    right = true;
+    backward = false;
+    left = false;
+  }
+  if ( inData == "S") {
+    forward = false;
+    right = false;
+    backward = true;
+    left = false;
+  }
+  if ( inData == "A") {
+    forward = false;
+    right = false;
+    backward = false;
+    left = true;
+  }
   if (forward) {
     digitalWrite(motorPin1, HIGH);
     digitalWrite(motorPin2, LOW);
     digitalWrite(motorPin3, HIGH);
-    digitalWrite(motorPin4, LOW)
+    digitalWrite(motorPin4, LOW);
     
   }
   if (right) {
@@ -43,7 +67,7 @@ void loop(){
     digitalWrite(motorPin1, LOW);
     digitalWrite(motorPin2, HIGH);
     digitalWrite(motorPin3, LOW);
-    digitalWrite(motorPin4, HIGH)
+    digitalWrite(motorPin4, HIGH);
   }
   if (left) {
     digitalWrite(motorPin1, HIGH);
