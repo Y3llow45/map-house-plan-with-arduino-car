@@ -26,37 +26,29 @@ void loop(){
     delay(10);
     HM10.write(Serial.read());
   }
-  if ( inData == "A") {
-    digitalWrite(8, HIGH);
-    delay(100);
-  }
-  if ( inData == "B") {
-    digitalWrite(8, LOW);
-    delay(100);
-  }
-  switch(inData) {
-    case "W":
-      forward
-      break;
-  }
+  if (forward) {
     digitalWrite(motorPin1, HIGH);
     digitalWrite(motorPin2, LOW);
-    digitalWrite(motorPin3, LOW);
+    digitalWrite(motorPin3, HIGH);
+    digitalWrite(motorPin4, LOW)
+    
+  }
+  if (right) {
+    digitalWrite(motorPin1, LOW);
+    digitalWrite(motorPin2, HIGH);
+    digitalWrite(motorPin3, HIGH);
     digitalWrite(motorPin4, LOW);
-    delay(2000);
+  }
+  if (backward) {
     digitalWrite(motorPin1, LOW);
     digitalWrite(motorPin2, HIGH);
     digitalWrite(motorPin3, LOW);
-    digitalWrite(motorPin4, LOW);
-    delay(2000);
-    digitalWrite(motorPin1, LOW);
-    digitalWrite(motorPin2, LOW);
-    digitalWrite(motorPin3, HIGH);
-    digitalWrite(motorPin4, LOW);
-    delay(2000);
-    digitalWrite(motorPin1, LOW);
+    digitalWrite(motorPin4, HIGH)
+  }
+  if (left) {
+    digitalWrite(motorPin1, HIGH);
     digitalWrite(motorPin2, LOW);
     digitalWrite(motorPin3, LOW);
     digitalWrite(motorPin4, HIGH);
-    delay(2000);
+  }
 }
