@@ -59,59 +59,11 @@ void loop(){
     digitalWrite(motorPin4, HIGH);
     delay(10);
   }
-}
-
-void previous() {
-  if ( inData == "W") {
-    forward = true;
-    right = false;
-    backward = false;
-    left = false;
-  }
-  if ( inData == "D") {
-    forward = false;
-    right = true;
-    backward = false;
-    left = false;
-  }
-  if ( inData == "S") {
-    forward = false;
-    right = false;
-    backward = true;
-    left = false;
-  }
-  if ( inData == "A") {
-    forward = false;
-    right = false;
-    backward = false;
-    left = true;
-  }
-  if (forward == true) {
-    digitalWrite(motorPin1, HIGH);
-    digitalWrite(motorPin2, LOW);
-    digitalWrite(motorPin3, HIGH);
-    digitalWrite(motorPin4, LOW);
-    delay(1000);
-  }
-  if (right == true) {
+  if(inData == 'L'){
     digitalWrite(motorPin1, LOW);
-    digitalWrite(motorPin2, HIGH);
-    digitalWrite(motorPin3, HIGH);
-    digitalWrite(motorPin4, LOW);
-    delay(1000);
-  }
-  if (backward == true) {
-    digitalWrite(motorPin1, LOW);
-    digitalWrite(motorPin2, HIGH);
-    digitalWrite(motorPin3, LOW);
-    digitalWrite(motorPin4, HIGH);
-    delay(1000);
-  }
-  if (left == true) {
-    digitalWrite(motorPin1, HIGH);
     digitalWrite(motorPin2, LOW);
     digitalWrite(motorPin3, LOW);
-    digitalWrite(motorPin4, HIGH);
-    delay(1000);
-  }  
+    digitalWrite(motorPin4, LOW);
+    delay(10);
+  }
 }
