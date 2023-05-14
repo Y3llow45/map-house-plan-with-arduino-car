@@ -6,27 +6,27 @@ int step_number = 0;
 int stepsPerRevolution = 2048;
 
 void setup() {
-pinMode(STEPPER_PIN_1, OUTPUT);
-pinMode(STEPPER_PIN_2, OUTPUT);
-pinMode(STEPPER_PIN_3, OUTPUT);
-pinMode(STEPPER_PIN_4, OUTPUT);
+  pinMode(STEPPER_PIN_1, OUTPUT);
+  pinMode(STEPPER_PIN_2, OUTPUT);
+  pinMode(STEPPER_PIN_3, OUTPUT);
+  pinMode(STEPPER_PIN_4, OUTPUT);
 
 }
 
 void loop() {
-  for (int i = 0; i < stepsPerRevolution/4; i++) {
+  for (int i = 0; i <= stepsPerRevolution/4; i++) {
     OneStep(false);
     delay(2);
   }
   delay(100);
 
-  for (int i = 0; i < stepsPerRevolution/2; i++) {
+  for (int i = 0; i <= stepsPerRevolution/2; i++) {
     OneStep(true);
     delay(2);
   }
   delay(100);
   
-  for (int i = 0; i < stepsPerRevolution/4; i++) {
+  for (int i = 0; i <= stepsPerRevolution/4; i++) {
     OneStep(false);
     delay(2);
   }
